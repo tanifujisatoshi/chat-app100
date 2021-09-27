@@ -18,19 +18,58 @@
 .side-bar-header {
   height: 100px;
   padding: 0 20px;
+  background-color: deeppink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* ログインしているユーザー名とチャットを作成するボタンが表示されている箱である */
 /* 高さを100pxに固定しました */
 /* その箱の左右の内側の余白を20pxあけました */
+/* 子要素であるログインしているユーザー名の箱とチャットルームを作成する箱を横に並べている */
+/* 子要素に水平方向に適当な間隔を空けるためにjustify-contentプロパティを使っている */
+/* 子要素を親要素内の垂直方向の中央に位置させたいのでalign-itemsプロパティを使っている */
+
+.header-name a{
+  font-size: 16px;
+  color: blueviolet;
+  text-decoration: none;
+}
+/* class属性がheader-nameのaタグ(ログインユーザー名)をセレクタとしている */
+/* aタグを使うと下線が表示されてしまうのでそれを取り払うためにtext-decorationプロパティの値にnoneを指定している */
+
+.create-room a {
+  font-size: 10px;
+  border: 1px solid lightgreen;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+/* class属性がcreate-roomであるaタグにCSSを当てている */
+/* チャットを作成する と 境界線の間に14pxの余白をあけている */
 
 .rooms {
   background-color: cornflowerblue;
   height: calc(100vh - 100px);
   padding: 0 20px;
+  overflow: scroll;
 }
 /* ログインしているユーザー参加しているチャットルーム名が表示されている箱である */
 /* ブラウザ全体の高さからログインしているユーザー名とチャットを作成するボタンが表示されている箱の高さを引いたものがroomsの高さになる */
 /* その箱の左右の内側の余白を20pxあけました */
+/* roomsの子要素がrooms外にはみ出る場合は親要素に対してoverflowプロパティを使用することではみ出したとしても親要素内に留めてくれる */
+
+.room-name {
+  padding: 20px 0 40px;
+}
+/* チャットルーム名の箱である */
+/* その箱の内側の上側に20px 下側に40pxの余白をあけている */
+
+.room-name a {
+  text-decoration: none;
+  color: blueviolet;
+}
+/* class属性がroom-nameのa要素にCSSを当てている */
 
 .chat {
   background-color: chartreuse;
