@@ -1,0 +1,211 @@
+/* views/messagesフォルダにあるファイルにmessages.cssファイル内に記述されたCSSを適用させることができる */
+
+.wrapper {
+  display: flex;
+}
+/* 子要素であるside-barとchatを横に並べたいのでdisplayプロパティの値にflexを指定している */
+
+
+.side-bar {
+  background-color: blue;
+  width: 300px;
+  height: 100vh;
+}
+/* サイドバーの横幅を300pxに固定している */
+/* サイドバーの高さをブラウザ全体の高さと一緒にしている */
+/* ブラウザの高さに応じてサイドバーの高さも変わる */
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  background-color: deeppink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ログインしているユーザー名とチャットを作成するボタンが表示されている箱である */
+/* 高さを100pxに固定しました */
+/* その箱の左右の内側の余白を20pxあけました */
+/* 子要素であるログインしているユーザー名の箱とチャットルームを作成する箱を横に並べている */
+/* 子要素に水平方向に適当な間隔を空けるためにjustify-contentプロパティを使っている */
+/* 子要素を親要素内の垂直方向の中央に位置させたいのでalign-itemsプロパティを使っている */
+
+.header-name a{
+  font-size: 16px;
+  color: blueviolet;
+  text-decoration: none;
+}
+/* class属性がheader-nameのaタグ(ログインユーザー名)をセレクタとしている */
+/* aタグを使うと下線が表示されてしまうのでそれを取り払うためにtext-decorationプロパティの値にnoneを指定している */
+
+.create-room a {
+  font-size: 10px;
+  border: 1px solid lightgreen;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+/* class属性がcreate-roomであるaタグにCSSを当てている */
+/* チャットを作成する と 境界線の間に14pxの余白をあけている */
+
+.rooms {
+  background-color: cornflowerblue;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+/* ログインしているユーザー参加しているチャットルーム名が表示されている箱である */
+/* ブラウザ全体の高さからログインしているユーザー名とチャットを作成するボタンが表示されている箱の高さを引いたものがroomsの高さになる */
+/* その箱の左右の内側の余白を20pxあけました */
+/* roomsの子要素がrooms外にはみ出る場合は親要素に対してoverflowプロパティを使用することではみ出したとしても親要素内に留めてくれる */
+
+.room-name {
+  padding: 20px 0 40px;
+}
+/* チャットルーム名の箱である */
+/* その箱の内側の上側に20px 下側に40pxの余白をあけている */
+
+.room-name a {
+  text-decoration: none;
+  color: blueviolet;
+}
+/* class属性がroom-nameのa要素にCSSを当てている */
+
+.chat {
+  background-color: chartreuse;
+  width: calc(100vw - 300px);
+}
+/* 右側のチャット画面全体の横幅はブラウザ全体の横幅からサイドバーの横幅を引いたものになっている */
+
+.chat-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+/* チャットのルーム名とチャットを終了するボタンが表示されている箱を示している */
+/* その箱の高さを100pxに固定している */
+/* その箱の左右の内側の余白を40pxあけました */
+/* 子要素のチャットルーム名とチャット終了ボタンを横に並べるためにdisplayプロパティを使っている */
+/* 子要素に間に水平方向に間隔を空けるためjustify-contentプロパティを親要素に使っている */
+
+.left-header {
+  color: brown;
+  font-size: 24px;
+  margin-top: 36px;
+}
+/* チャットルーム名を示す箱である */
+/* その箱の外側の上側に36px余白をあけている */
+
+.right-header {
+  margin-top: 40px;
+}
+/* チャット終了ボタンの箱である */
+/* その箱の外側の上側に40pxの余白をあけている */
+
+.right-header a {
+  text-decoration: none;
+  border: 1px solid dodgerblue;
+  color: black;
+  padding: 20px;
+}
+/* class属性がright-headerであるa要素に対してCSSを当てている */
+/* その箱の内側に20pxの余白を作っている */
+
+.messages {
+  background-color: darkgoldenrod;
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0;
+  overflow: scroll;
+}
+/* 投稿されたメッセージと画像が表示されている箱を示している */
+/* ブラウザ全体の高さからチャットのルーム名とチャットを終了するボタンが表示されている箱と投稿する内容を入力する欄と送信ボタンが表示されている箱の高さをものがその箱の高さになる */
+/* その箱の内側の上側に46pxの余白をあけました 内側の左右に40pxの余白をあけました */
+/* 投稿されたメッセージと画像が表示されている箱から投稿したメッセージ(投稿時間も表示されている)がはみ出さないようにoverflow(溢れるという意味)プロパティを用いてはみ出した分はスクロールして閲覧できるようにしている */
+
+.message {
+  margin-top: 10px;
+}
+/* 投稿者名と投稿時間を持つ箱を示している */
+/* その箱の外側の上側に10pxの余白をあけている */
+
+.message_name_with_message_date {
+  display: flex;
+}
+/* 投稿者名と投稿時間を持つ箱を示している */
+/* その子要素である投稿者名の箱と投稿時間の箱を横に並べている */
+
+.message-user {
+  color: blue;
+  font-size: 18px;
+}
+/* 投稿者名を持つ箱を表している */
+
+.message-date {
+  color: blueviolet;
+  font-size: 13px;
+  padding-left: 10px;
+}
+/* 投稿時間を持つ箱を示している */
+/* 投稿者名の箱と間隔を取るために投稿時間を持つ箱の内側の左側に10pxの余白をあけている */
+
+.message-content {
+  margin: 10px 0 40px 0;
+  color: black;
+  font-size: 14px;
+}
+/* 投稿した内容を持つ箱を示している */
+/* 投稿者名と投稿時間を持つ箱との間に間隔を空けるために投稿した内容を持つ箱の外側の上側に10pxの余白をあけている */
+/* 次の投稿を持つ箱と投稿内容を持つ箱の間に間隔をあけるために投稿内容を持つ箱の外側の下側に40pxの余白をあけている */
+
+.form {
+  background-color: darkorange;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+}
+/* 投稿する内容を入力する欄と送信ボタンが表示されている箱を示している */
+/* その箱の高さを90pxに固定している */
+/* その箱の内側の上下に20pxの余白をあけました 内側の左右に40pxの余白をあけました */
+/* メッセージ入力欄の箱と送信ボタンの箱を横に並べている */
+
+.form-message {
+  background-color: blanchedalmond;
+  width: 100%;
+  border: none;
+  padding-left: 10px;
+}
+/* メッセージ入力欄を持つ箱である */
+/* 横幅は親要素のformと同じになるようにするためにwidthプロパティの値に100%を指定した */
+/* borderプロパティにnoneを指定すると メッセージ入力欄を持つ箱にデフォルトであった境界線を消すことができる */
+/* placeholder属性の値であるtype a messageとメッセージ入力欄との間隔をあけるために メッセージ入力欄を持つ箱の内側の左側に10pxの余白をあけている */
+
+.form-image {
+  display: flex;
+  font-size: 12px;
+  background-color: blue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  text-align: center;
+}
+/* 非表示のファイル選択ボタンと画像という文字列を持つ箱である */
+
+.hidden {
+  display: none;
+}
+/* ファイルを選択するためのボタンを持つ箱を示している */
+/* そのボタンは表示する必要がないのでdisplayプロパティの値にnoneを指定している */
+
+.form-submit {
+  background-color: chartreuse;
+  border: none;
+  color: wheat;
+  font-size: 16px;
+  margin-left: 20px;
+  padding: 0 20px;
+}
+/* 送信ボタンの箱である */
+/* 送信ボタンの箱にはデフォルトで黒い境界線がついているのでそれを消すためにborderプロパティの値にnoneを指定している */
+/* メッセージ入力欄と送信ボタンの間に間隔をあけるために送信ボタンの箱の外側の左側に20pxの余白をあけている */
+/* value属性の値の 送信 と 送信ボタンの境界線に間隔をあけるために送信ボタンの箱の内側の左右に20pxの余白をあけている */

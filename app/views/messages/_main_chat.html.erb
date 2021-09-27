@@ -1,0 +1,71 @@
+<div class = "chat-header">
+<%# チャットのルーム名とチャットを終了するボタンが表示されている箱である %>
+  <div class = "left-header">
+<%# チャットルーム名を示す箱である %>
+    satoshi
+  </div>
+  <div class = "right-header">
+<%# チャット終了ボタンの箱である %>
+    <a href = "#">チャットを終了する</a>
+  </div>
+</div>
+
+<div class = "messages">
+<%# 投稿されたメッセージと画像が表示されている箱である %>
+  <div class = "message">
+<%# 投稿者 投稿時間 投稿内容を持つ箱である %>
+    <div class = "message_name_with_message_date">
+<%# 投稿者名と投稿時間を持つ箱である %>
+      <div class = "message-user">
+<%# 投稿者名を持つ箱である %>
+        satoshi
+      </div>
+
+      <div class = "message-date">
+<%# 投稿時間を持つ箱である %>
+        2021/09/30(Wed) 12:12:12
+      </div>
+    </div>
+
+    <div class = "message-content">
+<%# 投稿内容を持つ箱である %>
+      おはようございます
+    </div>
+  </div>
+
+  
+  <div class = "message">
+    <div class = "message_name_with_message_date">
+      <div class = "message-user">
+        kazuki
+      </div>
+
+      <div class = "message-date">
+        2021/09/30(Wed) 12:12:33
+      </div>
+    </div>
+
+    <div class = "message-content">
+      うるさいです
+    </div>
+  </div>
+</div>
+
+
+
+<div class = "form">
+<%# 投稿する内容を入力する欄と送信ボタンが表示されている箱である %>
+  <input class = "form-message" type = "text" placeholder = "type a message">
+<%# メッセージ投稿欄を持つ箱である %>
+  <label class = "form-image">
+<%# 画像という文字列とファイルを選択するためのボタンを持つ箱を持っている箱である %>
+    <div class = "image-file">画像</div>
+    <input type = "file" class = "hidden">
+<%# ファイルを選択するためのボタンを持つ箱である %>
+  </label>
+<%# 親要素がlabel要素なので親要素がクリックされた時(画像という文字列がクリックされた時) 子要素である非表示のファイルを選択するためのボタンをクリックすることができる %>
+  
+  <input class = "form-submit" type = "submit" value = "送信">
+<%# 送信ボタンの箱である %>
+<%# typeをsubmitにした場合にのみvalue属性に代入した値がボタンに表示される名前となる %>
+</div>
