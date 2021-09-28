@@ -190,6 +190,12 @@
   padding: 0 20px;
 }
 
+.field_with_errors {
+  display: contents;
+}
+/* 表示を変更するdisplayプロパティの値にcontentを使用すると指定した要素が表示されなくなる */
+/* 値をnoneにすると指定した要素の子要素であるメッセージ入力欄が表示されなくなる */
+
 .hidden {
   display: none;
 }
