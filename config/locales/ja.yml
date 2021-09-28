@@ -1,0 +1,5 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+# 投稿されたメッセージの投稿時間を日本時間に変更した

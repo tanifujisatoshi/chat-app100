@@ -21,6 +21,15 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id])
+# ルームを削除するときにビューからルームのidが渡されるのでそれを受け取るためにparams[:id]としている
+# 削除したいルームのレコードを取得できる
+    room.destroy
+    redirect_to root_path
+# ルームを削除したときはサイドバーしか表示されないビューにリダイレクトされる
+  end
+
   private
   def room_params
     params.require(:room).permit(:name, user_ids: [])

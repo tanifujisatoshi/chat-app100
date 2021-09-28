@@ -159,53 +159,46 @@
 /* 次の投稿を持つ箱と投稿内容を持つ箱の間に間隔をあけるために投稿内容を持つ箱の外側の下側に40pxの余白をあけている */
 
 .form {
-  background-color: darkorange;
+  background-color: chartreuse;
   height: 90px;
   padding: 20px 40px;
   display: flex;
 }
-/* 投稿する内容を入力する欄と送信ボタンが表示されている箱を示している */
-/* その箱の高さを90pxに固定している */
-/* その箱の内側の上下に20pxの余白をあけました 内側の左右に40pxの余白をあけました */
-/* メッセージ入力欄の箱と送信ボタンの箱を横に並べている */
+
+.form-input {
+  display: flex;
+  width: 100%;
+}
 
 .form-message {
-  background-color: blanchedalmond;
-  width: 100%;
   border: none;
+  height: 50px;
+  width: 100%;
   padding-left: 10px;
 }
-/* メッセージ入力欄を持つ箱である */
-/* 横幅は親要素のformと同じになるようにするためにwidthプロパティの値に100%を指定した */
-/* borderプロパティにnoneを指定すると メッセージ入力欄を持つ箱にデフォルトであった境界線を消すことができる */
-/* placeholder属性の値であるtype a messageとメッセージ入力欄との間隔をあけるために メッセージ入力欄を持つ箱の内側の左側に10pxの余白をあけている */
 
 .form-image {
-  display: flex;
-  font-size: 12px;
-  background-color: blue;
-  color: white;
   padding: 12px;
   width: 60px;
+  margin: 5px 10px;
   text-align: center;
 }
-/* 非表示のファイル選択ボタンと画像という文字列を持つ箱である */
+
+.form-submit {
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.field_with_errors {
+  display: contents;
+}
+/* 表示を変更するdisplayプロパティの値にcontentを使用すると指定した要素が表示されなくなる */
+/* 値をnoneにすると指定した要素の子要素であるメッセージ入力欄が表示されなくなる */
 
 .hidden {
   display: none;
 }
-/* ファイルを選択するためのボタンを持つ箱を示している */
-/* そのボタンは表示する必要がないのでdisplayプロパティの値にnoneを指定している */
 
-.form-submit {
-  background-color: chartreuse;
-  border: none;
-  color: wheat;
-  font-size: 16px;
-  margin-left: 20px;
-  padding: 0 20px;
-}
-/* 送信ボタンの箱である */
-/* 送信ボタンの箱にはデフォルトで黒い境界線がついているのでそれを消すためにborderプロパティの値にnoneを指定している */
-/* メッセージ入力欄と送信ボタンの間に間隔をあけるために送信ボタンの箱の外側の左側に20pxの余白をあけている */
-/* value属性の値の 送信 と 送信ボタンの境界線に間隔をあけるために送信ボタンの箱の内側の左右に20pxの余白をあけている */
+
+
