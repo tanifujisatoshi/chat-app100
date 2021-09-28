@@ -10,7 +10,8 @@
 
       <div class = "message-date">
 <%# 投稿時間を持つ箱である %>
-        <%= message.created_at %>
+        <%= l message.created_at %>
+<%# lメソッドを使うと指定した現地時間に対応した時間を表すことができる %>
       </div>
     </div>
 
