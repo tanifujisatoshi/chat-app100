@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root to: "messages#index"
-# トップページにアクセスしたときはmessagesコントローラーのindex.html.erbを表示する
-# つまりトップページににアクセスしたときは投稿したメッセージが表示されているということ
+  root to: "rooms#index"
+# トップページにアクセスした時roomsコントローラーのindexアクションのビューが表示される
+# ログインしているユーザーが参加しているチャットルーム名とログインしているユーザー名を持っているサイドバーが表示される
 
   resources :users, only: [:edit, :update]
 # ユーザーの情報を編集するページを表示するためにonlyオプションでeditアクションを指定しました
