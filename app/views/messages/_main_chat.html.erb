@@ -10,7 +10,10 @@
   </div>
   <div class = "right-header">
 <%# チャット終了ボタンの箱である %>
-    <a href = "#">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+<%# @roomにはチャットルームのレコードが入っている %>
+<%# ルームを削除するにはパスにルームのidを渡す必要があるので引数に@roomを入れている %>
+<%# HTTPメソッドがget以外のなので記述している %>
   </div>
 </div>
 

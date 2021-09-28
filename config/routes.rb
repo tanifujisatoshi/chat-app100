@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 # ユーザーの情報を編集するページを表示するためにonlyオプションでeditアクションを指定しました
 # ユーザーの情報を編集して更新ができるようにonlyオプションでupdateアクションを指定しました
 
-  resources :rooms, only: [:new, :create] do
+  resources :rooms, only: [:new, :create, :destroy] do
 # チャットルームの新規作成ページとチャットルームが作成できれば良いのでonlyオプションでnewアクションとcreateアクションを指定している
+# チャットルームの終了はルームを削除することで実現させたいのでroomsコントローラーにdestroyアクションを追加している
      resources :messages, only: [:index, :create]
   end
 # メッセージを投稿するときはどのチャットルームから投稿されたものなのかをパスから判断したいのでroomsコントローラーにmessagesコントローラーをネストさせる必要がある
