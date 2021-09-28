@@ -1,0 +1,47 @@
+<div class='chat-room-form'>
+  <h1>新規チャットルーム</h1>
+  <%=form_with model: @room, local: true do |f|%>
+<%# modelオプションでroomモデルの新規インスタンスが入ったインスタンス変数を指定すると入力された内容がroomsコントローラーのcreateアクションに送信される %>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    </div>
+    <div class='chat-room-form__field'>
+    </div>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <select name = "room[user_ids][]">
+          <option value = "">チャットするユーザーを選択してください</option>
+<%# option要素のvalue属性に空の値を指定することで空の値がコントローラーに送信される %>
+          <% User.where.not(id: current_user.id).each do |user| %>
+<%# usersテーブルからidがログインしているユーザーのid以外のレコードを全て取得している %>
+<%# ログインしているユーザーはチャットルームのメンバーに含まれているのでプルダウンの選択肢に表示させる必要がないためそのユーザーを除外しました %>
+<%# usersテーブルのレコードの数だけdo ~ endが繰り返される %>
+            <option value = <%= user.id %>><%= user.name %></option>
+<%# プルダウンで選択した人のidがroom[user_ids][]の空の配列に入る %>
+<%# {"room" => {"user_ids(チャットルームに所属させるユーザーのidを示す)" => [プルダウンで選択した人のid]}} がコントローラーに送られる %>
+          <% end %>
+        </select>
+        <input name = "room[user_ids][]" type = "hidden" value = <%= current_user.id %>>
+<%# input要素で入力フォームを作ることができログインしているユーザーのidが既に入力されている %>
+<%# ログインしているユーザーをroom[user_ids][]の空の配列に入れることができる %>
+<%# name属性を使っているのでログインしているユーザーのidをコントローラーに送ることができる %>
+<%# 最終的にコントローラーに送られるparamsの中身は以下のようになる %>
+<%# {"room" => {"user_ids" => [プルダウンで選択した人のid, ログインしているユーザーのid]}}がコントローラーに送られる %>
+      </div>
+    </div>
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'></div>
+      <div class='chat-room-form__field--right'>
+        <%= f.submit class: 'chat-room-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>

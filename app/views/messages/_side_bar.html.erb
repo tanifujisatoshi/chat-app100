@@ -9,17 +9,19 @@
   </div>
   <div class = "create-room">
 <%# チャットルームを作成するボタンの箱である %>
-    <a href = "#">チャットを作成します!!</a>
+    <%= link_to "チャットを作成するよ!!", new_room_path %>
+<%# リンク先がチャットルームの新規作成画面である %>
   </div>
 </div>
 
 <div class = "rooms">
 <%# ログインしているユーザーが参加しているチャットルーム名が表示されている箱である %>
-   <div class = "room-name">
-<%# チャットルーム名の箱である %>
-     <a href = "#">room1</a>
-   </div>
-   <div class = "room-name">
-     <a href = "#">room2</a>
-   </div>
+   <% current_user.rooms.each do |room| %>
+<%# ログインしているユーザーが所属しているroomsテーブルのレコードを全て取得している %>
+<%# そのレコードが一つ一つroomに格納される %>
+     <div class = "room-name">
+       <a href = "#"><%= room.name %></a>
+<%# roomsテーブルのレコードのnameカラムの内容が表示される %>
+     </div>
+   <% end %>
 </div>
