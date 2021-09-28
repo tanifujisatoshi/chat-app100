@@ -158,18 +158,36 @@
 /* 投稿者名と投稿時間を持つ箱との間に間隔を空けるために投稿した内容を持つ箱の外側の上側に10pxの余白をあけている */
 /* 次の投稿を持つ箱と投稿内容を持つ箱の間に間隔をあけるために投稿内容を持つ箱の外側の下側に40pxの余白をあけている */
 
-.form-input {
+.form {
+  background-color: chartreuse;
+  height: 90px;
+  padding: 20px 40px;
   display: flex;
-
 }
 
-.form-message {
+.form-input {
+  display: flex;
   width: 100%;
 }
 
-.image-file {
-  border: 1px solid black;
-  padding: 0 40px;
+.form-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-image {
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.form-submit {
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
 }
 
 .hidden {

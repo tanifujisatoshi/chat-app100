@@ -11,52 +11,21 @@
 </div>
 
 <div class = "messages">
-<%# 投稿されたメッセージと画像が表示されている箱である %>
-  <div class = "message">
-<%# 投稿者 投稿時間 投稿内容を持つ箱である %>
-    <div class = "message_name_with_message_date">
-<%# 投稿者名と投稿時間を持つ箱である %>
-      <div class = "message-user">
-<%# 投稿者名を持つ箱である %>
-        satoshi
-      </div>
-
-      <div class = "message-date">
-<%# 投稿時間を持つ箱である %>
-        2021/09/30(Wed) 12:12:12
-      </div>
-    </div>
-
-    <div class = "message-content">
-<%# 投稿内容を持つ箱である %>
-      おはようございます
-    </div>
-  </div>
-
-  
-  <div class = "message">
-    <div class = "message_name_with_message_date">
-      <div class = "message-user">
-        kazuki
-      </div>
-
-      <div class = "message-date">
-        2021/09/30(Wed) 12:12:33
-      </div>
-    </div>
-
-    <div class = "message-content">
-      うるさいです
-    </div>
-  </div>
+  <%= render partial: "message", collection: @messages %>
+<%# メッセージ内容を管理するための_message.html.erbを呼び出している %>
+<%# @messagesにはチャットルームに紐づくmessagesテーブルのレコード全てが入っている %>
+<%# そのレコードの数だけ_message.html.erbが展開される %>
+<%# _message.html.erb内で@messagesのレコード1つをmessageという変数で扱うことができる %>
 </div>
 
 
 <%= form_with model: [@room, @message], class: "form", local: true do |f| %>
+<%# 入力欄と画像添付ボタンと送信ボタンを持つ箱である %>
   <div class = "form-input">
+<%# 入力欄と画像を添付ボタンを持つ箱である %>
     <%= f.text_field :content, class: "form-message", placeholder: "入力する" %>
     <label class = "form-image">
-      <div class = "image-file">画像を添付する</div>
+      <div class = "image-file">画像</div>
       <%= f.file_field :image, class: "hidden" %>
     </label>
   </div>
