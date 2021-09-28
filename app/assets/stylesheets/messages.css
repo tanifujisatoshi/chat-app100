@@ -158,54 +158,23 @@
 /* 投稿者名と投稿時間を持つ箱との間に間隔を空けるために投稿した内容を持つ箱の外側の上側に10pxの余白をあけている */
 /* 次の投稿を持つ箱と投稿内容を持つ箱の間に間隔をあけるために投稿内容を持つ箱の外側の下側に40pxの余白をあけている */
 
-.form {
-  background-color: darkorange;
-  height: 90px;
-  padding: 20px 40px;
+.form-input {
   display: flex;
+
 }
-/* 投稿する内容を入力する欄と送信ボタンが表示されている箱を示している */
-/* その箱の高さを90pxに固定している */
-/* その箱の内側の上下に20pxの余白をあけました 内側の左右に40pxの余白をあけました */
-/* メッセージ入力欄の箱と送信ボタンの箱を横に並べている */
 
 .form-message {
-  background-color: blanchedalmond;
   width: 100%;
-  border: none;
-  padding-left: 10px;
 }
-/* メッセージ入力欄を持つ箱である */
-/* 横幅は親要素のformと同じになるようにするためにwidthプロパティの値に100%を指定した */
-/* borderプロパティにnoneを指定すると メッセージ入力欄を持つ箱にデフォルトであった境界線を消すことができる */
-/* placeholder属性の値であるtype a messageとメッセージ入力欄との間隔をあけるために メッセージ入力欄を持つ箱の内側の左側に10pxの余白をあけている */
 
-.form-image {
-  display: flex;
-  font-size: 12px;
-  background-color: blue;
-  color: white;
-  padding: 12px;
-  width: 60px;
-  text-align: center;
+.image-file {
+  border: 1px solid black;
+  padding: 0 40px;
 }
-/* 非表示のファイル選択ボタンと画像という文字列を持つ箱である */
 
 .hidden {
   display: none;
 }
-/* ファイルを選択するためのボタンを持つ箱を示している */
-/* そのボタンは表示する必要がないのでdisplayプロパティの値にnoneを指定している */
 
-.form-submit {
-  background-color: chartreuse;
-  border: none;
-  color: wheat;
-  font-size: 16px;
-  margin-left: 20px;
-  padding: 0 20px;
-}
-/* 送信ボタンの箱である */
-/* 送信ボタンの箱にはデフォルトで黒い境界線がついているのでそれを消すためにborderプロパティの値にnoneを指定している */
-/* メッセージ入力欄と送信ボタンの間に間隔をあけるために送信ボタンの箱の外側の左側に20pxの余白をあけている */
-/* value属性の値の 送信 と 送信ボタンの境界線に間隔をあけるために送信ボタンの箱の内側の左右に20pxの余白をあけている */
+
+

@@ -52,20 +52,13 @@
 </div>
 
 
-
-<div class = "form">
-<%# 投稿する内容を入力する欄と送信ボタンが表示されている箱である %>
-  <input class = "form-message" type = "text" placeholder = "type a message">
-<%# メッセージ投稿欄を持つ箱である %>
-  <label class = "form-image">
-<%# 画像という文字列とファイルを選択するためのボタンを持つ箱を持っている箱である %>
-    <div class = "image-file">画像</div>
-    <input type = "file" class = "hidden">
-<%# ファイルを選択するためのボタンを持つ箱である %>
-  </label>
-<%# 親要素がlabel要素なので親要素がクリックされた時(画像という文字列がクリックされた時) 子要素である非表示のファイルを選択するためのボタンをクリックすることができる %>
-  
-  <input class = "form-submit" type = "submit" value = "送信">
-<%# 送信ボタンの箱である %>
-<%# typeをsubmitにした場合にのみvalue属性に代入した値がボタンに表示される名前となる %>
-</div>
+<%= form_with model: [@room, @message], class: "form", local: true do |f| %>
+  <div class = "form-input">
+    <%= f.text_field :content, class: "form-message", placeholder: "入力する" %>
+    <label class = "form-image">
+      <div class = "image-file">画像を添付する</div>
+      <%= f.file_field :image, class: "hidden" %>
+    </label>
+  </div>
+  <%= f.submit "送信", class: "form-submit" %>
+<% end %>
