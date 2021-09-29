@@ -34,6 +34,8 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
+# paramsで送られてくるcontentキーとimageキーのバリューの保存を許可している
+# メッセージを投稿できるのはログインしているユーザーなのでmessagesテーブルの誰が投稿したかを示すuser_idカラムにログインしているユーザーのidを保存している
 end
