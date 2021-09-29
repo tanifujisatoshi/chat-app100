@@ -1,4 +1,4 @@
-
+<%# messageはmessagesテーブルのレコード一つを表す %>
   <div class = "message">
 <%# 投稿者 投稿時間 投稿内容を持つ箱である %>
     <div class = "message_name_with_message_date">
@@ -19,9 +19,17 @@
 <%# 投稿内容を持つ箱である %>
        <%= message.content %>
     </div>
+
+    <%= image_tag message.image.variant(resize: "500 x 500"), class: "message-image" if message.image.attached? %>
+<%# image_tagメソッドを使うことで画像を表示できる %>
+<%# messageモデルにimageカラムとのアソシエーションを記述したので messagesテーブルに紐づく画像を表示することができる %>
+<%# if message.image.attached?という記述が無いと投稿されたメッセージに画像を添付していない時でも画像を表示させる記述を読み込んでしまいエラーが起きるのでその記述は必要である %>
+<%# 投稿したメッセージに画像が添付されている場合は画像が表示される 画像が添付されていない場合はimage_tag message.imageの記述は読み込まれず画像が表示されない %>
+<%# 表示される画像に対してvariantメソッド(異なったという意味)を使うことでサイズを調整することができる %>
+<%# resize(大きさを変更するという意味)オプションを使うことで任意のサイズに調整することができる %>
   </div>
 
-<%# messageはmessagesテーブルのレコード一つを表す %>
+
 
   
   
