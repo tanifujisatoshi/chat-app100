@@ -9,8 +9,6 @@ Bundler.require(*Rails.groups)
 module ChatApp100
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-# 日本時刻の設定にはapplicationファイルを活用する
-# 投稿されたメッセージの投稿時間を日本時間に設定している
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
